@@ -1,0 +1,40 @@
+header {
+   margin-top: 5rem;
+
+   
+  .container {
+    display: grid;
+    grid-template-areas:
+      'one two four'
+      'one two four-low';
+  
+    grid-gap: 1.3rem;
+    gap: 1rem;
+    height: 40rem;
+    padding: 0 10rem;
+
+    @include mobile {
+        padding: 0 0;
+    }
+
+    :first-child {
+      background-image: url('/products/p1.jpg');
+      grid-area: one;
+      background-repeat: no-repeat;
+    }
+    .img2 {
+      background-image: url('/products/skincare.jpg');
+      grid-area: two;
+      background-position: 0%;
+      background-repeat: no-repeat;
+    }
+    .img3 {
+      background-image: url('/products/kitchen.jpg');
+    }
+    :last-child{
+      background-image: url('/products/electr.jpg');
+    
+      grid-area: four-low;
+    }
+  }
+}

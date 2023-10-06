@@ -1,0 +1,33 @@
+.navbar{
+    height:7rem;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    border-bottom: .5px solid gray;
+   
+    .logo{
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+    .menu{
+
+        ul{
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            
+            li{
+                transition: all 500ms ease-in-out;
+                
+                &:hover{
+                    color: red;
+                    cursor: pointer;
+                    border-bottom: .1px solid gray;
+                }
+
+            }
+        }
+    }
+}
