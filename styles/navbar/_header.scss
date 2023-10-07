@@ -1,40 +1,83 @@
 header {
-   margin-top: 5rem;
+  margin-top: 5rem;
 
-   
   .container {
     display: grid;
     grid-template-areas:
       'one two four'
       'one two four-low';
-  
     grid-gap: 1.3rem;
     gap: 1rem;
-    height: 40rem;
-    padding: 0 10rem;
+    height: 36rem;
+   
+    
+
+    div{
+        position: relative;
+        cursor: pointer;
+      
+
+        .overlay{
+            position: absolute;
+           background-color: rgba(0,0,0,.3);;
+           inset: 0;
+           transition: all .3s ease-in;
+           &:hover{
+               background-color: rgba(0,0,0,.7);
+           }
+        }
+        
+        .descr{
+            width: 100%;
+            color: white;
+            position: absolute;
+            bottom: 2rem;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 25px;
+
+            @include mobile {
+                font-size: 16px;
+            }
+        }
+    }
 
     @include mobile {
-        padding: 0 0;
+        grid-gap: 13px;
+        gap: 13px;
+        padding: 0;
+        grid-template-areas:
+          'one two'
+          'four four-low';
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 500px;
+        background-color: gray;
     }
 
-    :first-child {
-      background-image: url('/products/p1.jpg');
+    .gridOne {
       grid-area: one;
-      background-repeat: no-repeat;
+      background-color: blue;
+      background-image: url('/products/p1.jpg');
+      background-size: cover;
     }
-    .img2 {
-      background-image: url('/products/skincare.jpg');
+    .gridTwo {
       grid-area: two;
-      background-position: 0%;
-      background-repeat: no-repeat;
+      background-color: green;
+      background-image: url('/products/skincare.jpg');
+      background-size: cover;
     }
-    .img3 {
-      background-image: url('/products/kitchen.jpg');
+    .gridThree {
+      grid-area: four;
+      background-color: black;
+        background-image: url('/products/electr.jpg');
+        background-size: cover;
     }
-    :last-child{
-      background-image: url('/products/electr.jpg');
-    
+    .gridFour {
       grid-area: four-low;
+      background-color: red;
+        background-image: url('/products/kitchen.jpg');
+        background-size: cover;
     }
   }
 }

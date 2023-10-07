@@ -1,0 +1,43 @@
+.trend {
+  .nav_trend {
+    display: flex;
+    justify-content: space-between;
+    .btn_trend {
+      display: flex;
+      gap: 0.6rem;
+      .btn_trend_ {
+        background-color: black;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        padding: 1.3rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: none;
+        border: none;
+        cursor: pointer;
+
+      }
+     
+    }
+  }
+  .trend__container {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 3rem;
+    position: relative;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    height: 22rem;
+    &::-webkit-scrollbar {
+        width: 0 !important
+      }
+  }
+}

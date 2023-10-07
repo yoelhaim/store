@@ -1,33 +1,104 @@
-.navbar{
-    height:7rem;
-    background-color: #ffff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5rem;
-    border-bottom: .5px solid gray;
-   
-    .logo{
-        font-size: 1.8rem;
-        font-weight: bold;
+.navbar {
+  height: 7rem;
+  background-color: #ffff;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  padding: 0 5rem;
+  border-bottom: 0.5px solid gray;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  @include mobile {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+  .menu {
+    .icon_menu {
+      cursor: pointer;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 50%;
+      position: relative;
+      display: none;
+      flex-direction: column;
+      padding: 0.2rem;
+      width: 2rem;
+      height: 2rem;
+
+      @include mobile {
+        display: flex;
+      }
+      &::before {
+        position: absolute;
+        content: '';
+        width: 1.8rem;
+        height: 3px;
+        background-color: black;
+        transition: all 500ms ease-in-out;
+        transform: translateY(-5px);
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        width: 1.8rem;
+        height: 3px;
+        background-color: black;
+        transition: all 500ms ease-in-out;
+        transform: translateY(5px);
+      }
     }
-    .menu{
 
-        ul{
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-            
-            li{
-                transition: all 500ms ease-in-out;
-                
-                &:hover{
-                    color: red;
-                    cursor: pointer;
-                    border-bottom: .1px solid gray;
-                }
+    ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      transition: all 500ms ease-in-out;
+      @include mobile {
+        display: none;
+      }
 
-            }
+      li {
+        transition: all 500ms ease-in-out;
+
+        &:hover {
+          cursor: pointer;
+          border-bottom: 0.1px solid gray;
         }
+      }
     }
+  }
+
+  .actives {
+    ul {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      padding-top: 5rem;
+      align-items: center;
+      background-color: #ffff;
+      font-size: 20px;
+      z-index: 9;
+      inset: 0;
+      top: 7rem;
+    }
+    .icon_menu {
+      &::before {
+        transform: rotate(45deg) translateX(0);
+      }
+      &::after {
+        transform: rotate(-45deg) translateX(0);
+      }
+    }
+  }
 }
