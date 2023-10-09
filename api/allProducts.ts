@@ -4182,7 +4182,7 @@ const DataProducts = [
     price: 1021,
     description: 'RAOUF Products are all made to standard sizes so that you can mix and match them freely.',
     images: [
-      '/products/banner.jpg',
+      'https://i.ibb.co/x7mxJ3X/banner.jpg',
     ],
     creationAt: '2023-10-08T16:05:52.000Z',
     updatedAt: '2023-10-08T16:05:52.000Z',
@@ -4200,7 +4200,7 @@ const DataProducts = [
     price: 11,
     description: 'RAOUF Products are all made to standard sizes so that you can mix and match them freely.banner2',
     images: [
-      '/products/banner1.jpg',
+      'https://i.ibb.co/WtGxghw/banner1.jpg',
     ],
     creationAt: '2023-10-08T16:05:52.000Z',
     updatedAt: '2023-10-08T16:05:52.000Z',
