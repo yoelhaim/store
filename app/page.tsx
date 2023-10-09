@@ -15,6 +15,7 @@ export default function Home() {
         title="Creative harmonious living"
         description=" RAOUF Products are all made to standard sizes so that you can mix and match them freely."
         image="/products/banner.jpg"
+        id={357}
       />
 
       <Trending />
@@ -25,6 +26,7 @@ export default function Home() {
         title="Comfortable & Elegante Living"
         description="RAOUF Products are all made to standard sizes so that you can mix and match them freely.banner2"
         image="/products/banner2.jpg"
+        id={358}
       />
     </div>
   );

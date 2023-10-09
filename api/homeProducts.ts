@@ -166,6 +166,42 @@ const Products = [
       updatedAt: '2023-10-07T19:16:30.000Z',
     },
   },
+  {
+    id: 357,
+    title: 'Creative harmonious living',
+    price: 1021,
+    description: 'RAOUF Products are all made to standard sizes so that you can mix and match them freely.',
+    images: [
+      '/products/banner.jpg',
+    ],
+    creationAt: '2023-10-08T16:05:52.000Z',
+    updatedAt: '2023-10-08T16:05:52.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://i.imgur.com/RQL19O6.jpeg',
+      creationAt: '2023-10-07T19:16:30.000Z',
+      updatedAt: '2023-10-07T19:16:30.000Z',
+    },
+  },
+  {
+    id: 358,
+    title: 'Comfortable & Elegante Living',
+    price: 1200,
+    description: 'RAOUF Products are all made to standard sizes so that you can mix and match them freely.banner2',
+    images: [
+      '/products/banner2.jpg',
+    ],
+    creationAt: '2023-10-08T16:05:52.000Z',
+    updatedAt: '2023-10-08T16:05:52.000Z',
+    category: {
+      id: 4,
+      name: 'Shoes',
+      image: 'https://i.imgur.com/RQL19O6.jpeg',
+      creationAt: '2023-10-07T19:16:30.000Z',
+      updatedAt: '2023-10-07T19:16:30.000Z',
+    },
+  },
 ];
 
 export default Products;

@@ -167,6 +167,13 @@
     border-radius: 1rem;
     overflow: auto;
     height: 84vh;
+
+    @include tablet{
+        height: 600px;
+    }
+    @include mobile {
+      height: 300px;
+    }
   
   
     .list {
