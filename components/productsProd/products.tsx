@@ -1,56 +1,49 @@
+'use client';
+import { useContext, useEffect, useState } from 'react';
 import { Card } from '../ui/Card';
+import instanceAxios from '@/api/axios';
+import Link from 'next/link';
+import Products from '@/api/homeProducts';
+import { TasksContext, TasksDispatchContext } from '../children/taskCont';
+
 
 export default function ProductProud() {
+    const [isClient, setIsClient] = useState<boolean>(false);
+    const tasks = useContext(TasksContext);
+    const dispatch = useContext(TasksDispatchContext);
+
+    useEffect(() => {
+      setIsClient(true)
+    }, [])
+  
+
+
   return (
     <div>
       <h1 className="title_">Product we are Proud of you</h1>
 
       <div className="all_prod">
-        <Card
-          image="/prod/art01.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art02.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art03.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art04.png"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art05.jpeg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art06.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art07.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art08.jpeg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art09.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
+        {
+        isClient &&
+        Products.map((items: any) => (
+          <Link href={`/products/${items.id}`} key={items.id}>
+            <Card
+              image={items.images[0]}
+              title={items.title}
+              price={`${items.price}$`}
+            />
+          </Link>
+        ))}
+
+
+
+        {/* <button onClick={() => {
+            dispatch({
+                type: 'added',
+                id: 1,
+                text: 'text',
+            });
+        }}>Add Task</button> */}
       </div>
     </div>
   );

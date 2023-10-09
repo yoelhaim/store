@@ -5,11 +5,44 @@
 
 @import 'navbar/navbarStyle.scss';
 
-
 @import 'navbar/header';
-
 
 @import 'navbar/footer';
 
 @import 'home/trending.scss';
 
+.header_cat {
+  display: flex;
+  justify-content: space-center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  a {
+    padding: 0.6rem;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+    cursor: pointer;
+  }
+}
+
+.item_cat {
+  display: flex;
+  justify-content: space-center;
+  align-items: center;
+  width: 100%;
+
+  .items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 1rem;
+    @include mobile {
+      gap: 0.5rem;
+      flex-direction: column;
+    }
+  }
+}

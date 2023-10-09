@@ -69,6 +69,22 @@
       }
 
       li {
+        position: relative;
+        i{
+            color: white;
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: red;
+            padding: .3rem;
+            border-radius: 50%;
+            top: -1rem;
+            right: -1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
         transition: all 500ms ease-in-out;
 
         &:hover {
@@ -102,3 +118,95 @@
     }
   }
 }
+
+.shop {
+  position: fixed;
+  z-index: 20;
+  background-color: #ffff;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 30rem;
+  box-shadow: 1px 1px 2px 3px #dad6d6;
+  height: 100vh;
+  padding-bottom: 10rem;
+  padding: 1rem;
+  @include mobile {
+
+    width: 95%;
+  }
+  .footer_checkout{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    
+
+    button{
+        border-radius: .3rem;
+        cursor: pointer;
+    }
+    
+
+    :first-child{
+      background-color: #b6002c;
+      border: 1px solid #b6002c;
+      &:hover{
+        background-color: white;
+        border: 1px solid #b6002c;
+      }
+    }
+  }
+  .list_shop {
+    background-color: #dddada;
+    padding: .3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    overflow: auto;
+    height: 84vh;
+  
+  
+    .list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffff;
+      padding: 1rem;
+      width: 90%;
+      border-radius: 1rem;  
+    }
+  }
+  .headershop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    button{
+        background-color: transparent;
+        border: none;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+  }
+  .empty{
+    color: red;
+    text-align: center;
+    padding:  5rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+ 
+ 
+}
+ .overlayshop{
+    position: fixed;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

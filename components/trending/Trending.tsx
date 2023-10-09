@@ -1,15 +1,26 @@
 'use client';
 
-import React, { use, useRef } from 'react';
+import React, { use, useEffect, useRef, useState } from 'react';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
+import instanceAxios from '@/api/axios';
+import Link from 'next/link';
+import Trend from '@/api/trend';
 
 export default function Trending() {
   const ref = useRef<HTMLInputElement>(null);
+ 
+  
 
   const scroll = (scrollOffset: number) => {
     if (ref.current) ref.current.scrollLeft += scrollOffset;
   };
+
+ const [isClient, setIsClient] = useState<boolean>(false);
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <section className="trend">
       <div className="nav_trend">
@@ -29,51 +40,21 @@ export default function Trending() {
       </div>
 
       <div className="trend__container" ref={ref}>
-        <Card
-          image="/prod/art11.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art12.jpeg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art13.png"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art14.png"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art15.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art16.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art17.png"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art18.png"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
-        <Card
-          image="/prod/art19.jpg"
-          title="Little Armchair Sheepskin"
-          price="100$"
-        />
+
+       
+      {
+        isClient &&
+        
+        Trend.map((items: any)=>(
+           <Link href={`/products/${items.id}`} key={items.id}>
+             <Card
+            image={items.images[0]}
+            title={items.title}
+            price={`${items.price}$`}
+          />
+            </Link>
+        ))
+       }
       </div>
     </section>
   );

@@ -1,10 +1,7 @@
-import Footer from '@/components/footer/Footer';
-import Header from '@/components/header/Header';
-import Navbar from '@/components/navbar/Navbar';
+import ContextProvidor from '@/components/children/layout';
 import '@/styles/_gloabl.scss';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -17,16 +14,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+   
   return (
     <html lang="en">
       <body className={inter.className} suppressHydrationWarning>
-          <Navbar />
-        <main className='main'>
-
-        
-          {children}
-        </main>
-          <Footer/>
+         <ContextProvidor children={children}/>
       </body>
     </html>
   );

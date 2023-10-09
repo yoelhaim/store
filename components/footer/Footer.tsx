@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
         
-        Footer
+        Created by <a href="https://youmer.tech" style={{color: 'red'}}>@YouMer</a>
         </footer>
   )
 }
