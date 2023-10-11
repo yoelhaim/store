@@ -10,6 +10,11 @@ body {
 .main {
   padding: 0 3rem;
 
+  @include desktop{
+    width: 900px;
+    margin: 0 auto;
+  }
+
   @include notDesktop {
     padding: 0 1rem;
   }
@@ -308,3 +313,6 @@ a {
   text-decoration: none;
   color: black;
 }
+
+
+
